@@ -1,3 +1,4 @@
+import 'package:application_weather_new/Services/drift/app_db.dart';
 import 'package:application_weather_new/Services/repository.dart';
 import 'package:get_it/get_it.dart';
 import '../BLoC/CityAddBloc/1.CityAddBloc.dart';
@@ -11,6 +12,8 @@ void initGetIt() async {
   dependency.registerSingleton<CitiesRepository>(CitiesRepository());
 
   dependency.registerSingleton<Provider>(Provider());
+
+  dependency.registerSingleton<AppDb>(AppDb());
 
   dependency.registerFactory<CityBloc>(() => CityBloc());
 

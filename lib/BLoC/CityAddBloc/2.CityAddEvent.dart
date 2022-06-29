@@ -4,7 +4,7 @@ import '../../Services/Provider/CitiesJSON.dart';
 abstract class CityAddEvent {}
 
 class AddNewCityEvent extends CityAddEvent {
-  City? city;
+  CitiesJSON? city;
   AddNewCityEvent({required this.city});
 }
 

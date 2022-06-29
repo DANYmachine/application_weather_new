@@ -95,7 +95,7 @@ class _DetailPageState extends State<DeletePage> {
                         );
                         _deleteBloc.add(
                           DeleteEvent(
-                            idToDelete: state.cities[index].id,
+                            idToDelete: index,
                           ),
                         );
                       },

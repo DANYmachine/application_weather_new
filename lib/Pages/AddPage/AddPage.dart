@@ -101,7 +101,7 @@ class _AddPageState extends State<AddPage> {
                                   );
                                   await _provider.getWeather(city);
                                   _addBloc.add(AddNewCityEvent(
-                                    city: city,
+                                    city: state.cities[index],
                                   ));
                                   Navigator.pop(
                                     context,

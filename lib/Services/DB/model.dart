@@ -11,7 +11,7 @@ class City {
   String? description;
   String? currently;
   int? humidity;
-  int? windVelocity;
+  var windVelocity;
   String? iconCode;
   int? dt;
   var windDirection;

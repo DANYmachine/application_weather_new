@@ -4,6 +4,7 @@ class CitiesEntity extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get idCity => text()();
   TextColumn get city => text().named('city')();
+  /*
   RealColumn get curTemp => real().named('curtemp')();
   RealColumn get feelsLike => real().named('feelsLike')();
   TextColumn get description => text().named('description')();
@@ -16,11 +17,13 @@ class CitiesEntity extends Table {
   IntColumn get population => integer().named('population')();
   IntColumn get pressure => integer().named('pressure')();
   IntColumn get clouds => integer().named('clouds')();
+  */
   TextColumn get state => text().named('state')();
+  /*
   TextColumn get sunrise => text().named('sunrise')();
   TextColumn get sunset => text().named('sunset')();
   TextColumn get dayLength => text().named('dayLength')();
-  TextColumn get iconUri => text().named('iconUri')();
+  TextColumn get iconUri => text().named('iconUri')();*/
   TextColumn get country => text().named('country')();
   RealColumn get lon => real().named('lon')();
   RealColumn get lat => real().named('lat')();

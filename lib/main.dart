@@ -1,7 +1,9 @@
+import 'package:application_weather_new/Services/drift/app_db.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Services/Provider/provider.dart';
 import 'Services/injections_container.dart';
+import 'Services/repository.dart';
 import 'SplashScreen/SplashScreen.dart';
 
 Future<void> main() async {
@@ -14,7 +16,7 @@ Future<void> main() async {
     ),
   );
   await dependency<Provider>().readJson();
-
+  await dependency<CitiesRepository>().GetCitiesList();
   runApp(MyApp());
 }
 

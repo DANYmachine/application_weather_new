@@ -16,7 +16,7 @@ class CityBloc extends Bloc<CityEvent, CityState> {
       try {
         await dependency<Provider>().GetFullInfo();
         emit(CityLoadedState(
-          cities: dependency<CitiesRepository>().citiesDB,
+          cities: await dependency<CitiesRepository>().GetCitiesList(),
         ));
       } catch (_) {
         emit(CityErrorState());

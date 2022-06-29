@@ -10,8 +10,7 @@ class CityAddBloc extends Bloc<CityAddEvent, CityAddState> {
   final Provider _provider = dependency<Provider>();
   CityAddBloc() : super(CityAddUninitialisedState()) {
     on<AddNewCityEvent>((event, emit) async {
-      await _provider.getWeather(event.city!);
-      _citiesRepository.citiesDB.add(await _provider.getWeather(event.city!));
+      _citiesRepository.AddNewCity(event.city!);
       emit(
         CityAddLoadedState(
           cities: _citiesRepository.citiesDB,

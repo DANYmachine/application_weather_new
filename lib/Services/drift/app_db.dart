@@ -14,7 +14,7 @@ part 'app_db.g.dart';
 LazyDatabase _openConnection() {
   return LazyDatabase(() async {
     final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(path.join(dbFolder.path, 'databaseCities.sqlite'));
+    final file = File(path.join(dbFolder.path, 'data.sqlite'));
 
     return NativeDatabase(file);
   });
@@ -31,16 +31,6 @@ class AppDb extends _$AppDb {
     return await select(citiesEntity).get();
   }
 
-  Future<City> toCity(CitiesEntityCompanion companion) async {
-    City city = City();
-    return city;
-  }
-
-  Future<CitiesEntityCompanion> toCompanion(City city) async {
-    CitiesEntityCompanion companion = CitiesEntityCompanion();
-    return companion;
-  }
-
   Future<List<City>> getCitiesListFromDB() async {
     List<City> list = [];
     List<CitiesEntityData> data = await select(citiesEntity).get();
@@ -49,25 +39,26 @@ class AppDb extends _$AppDb {
         id: note.id,
         city: note.city,
         idCity: note.idCity,
-        curTemp: note.curTemp,
+        country: note.country,
+        /*curTemp: note.curTemp,
         feelsLike: note.feelsLike,
         description: note.description,
         currently: note.currently,
         humidity: note.humidity,
-        windVelocity: int.parse(note.windVelocity.toString()),
+        windVelocity: note.windVelocity,
         iconCode: note.iconCode,
         dt: note.dt,
         windDirection: note.windDirection,
         population: note.population,
         pressure: note.pressure,
         clouds: note.clouds,
-        country: note.country,
         sunrise: note.sunrise,
         sunset: note.sunset,
-        dayLength: note.dayLength,
+        dayLength: note.dayLength,*/
         longitude: note.lon,
         latitude: note.lat,
-        iconUri: note.iconUri,
+        /*
+        iconUri: note.iconUri,*/
         state: note.state,
       ));
     }
